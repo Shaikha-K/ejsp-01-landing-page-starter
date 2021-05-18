@@ -1,41 +1,46 @@
 :root {
-    --theme-primary: #01579b;
-    --theme-accent:#0082f1;
-    --theme-light: #4d97ff;
-    --theme-light-focus: #72a1e4;
-    --theme-dark: #002f6c;
-    --theme-dark-opacue: rgba(0, 47, 108, 0.6);
-    --theme-primary-text: #fff;
-    --theme-padding-xs: 4px;
-    --theme-padding-s: 8px;
-    --theme-padding-m: 16px;
-    --theme-padding-l: 24px;
-    --theme-padding-xl: 32px;
-    --theme-padding-xxl: 88px;
-    --theme-transition: 0.24s cubic-bezier(0.250, 0.460, 0.450, 0.940);
-    --theme-font-size-s: 0.85rem;
+  --theme-primary: #3d474e;
+  --theme-primary-opacue: rgba(1, 88, 155, 0.8);
+  --theme-secondary: #da7b10;
+  --theme-accent: #60778b;
+  --theme-light: #414f63;
+  --theme-light-focus: #72a1e4;
+  --theme-dark: #19212b;
+  --theme-dark-opacue: rgba(18, 28, 41, 0.6);
+  --theme-background: #F0F2F6;
+  --theme-background-secondary: rgba(0, 47, 108, .06);
+  --theme-primary-text: #fff;
+  --theme-padding-xs: 4px;
+  --theme-padding-s: 8px;
+  --theme-padding-m: 16px;
+  --theme-padding-l: 24px;
+  --theme-padding-xl: 32px;
+  --theme-padding-xxl: 88px;
+  --theme-padding-xxxl: 200px;
+  --theme-transition: 0.24s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  --theme-font-size-s: 0.85rem;
 }
 
 
 @font-face {
-    font-family: 'Saira';
-    src: url('./assets/font/Saira-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Saira';
+  src: url('./assets/font/Saira-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Saira';
-    src: url('./assets/font/Saira-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
+  font-family: 'Saira';
+  src: url('./assets/font/Saira-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Saira';
-    src: url('./assets/font/Saira-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+  font-family: 'Saira';
+  src: url('./assets/font/Saira-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
 }
 
 h1,
@@ -44,55 +49,328 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0;
+  margin: 0;
 }
 
 html {
-    position: relative;
-    min-height: 100%;
+  position: relative;
+  min-height: 100%;
 }
 
 body {
-    font-family: 'Saira', sans-serif;
-    margin: 0;
-    width: 100%;
-    height: auto;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+  font-family: 'Saira', sans-serif;
+  margin: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: var(--theme-background);
+}
+
+header {
+  background-color: var(--theme-primary);
+  color: var(--theme-primary-text);
+  padding: var(--theme-padding-m);
+  min-height: 42px;
+  max-height: 42px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+}
+
+header img {
+  width: 80px;
+}
+
+header h1 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 1.5rem;
+}
+
+h3 {
+  color:var(--theme-secondary);
+  margin-bottom: var(--theme-padding-xl);
+  font-size: 1.4rem;
+}
+
+nav {
+  padding: var(--theme-padding-m);
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: calc(42px + var(--theme-padding-xl));
+}
+
+nav a {
+  background-color: var(--theme-primary);
+  color: var(--theme-primary-text);
+  text-decoration: none;
+  font-size: var(--theme-font-size-s);
+  padding: var(--theme-padding-xs) var(--theme-padding-s);
+  border-radius: var(--theme-padding-xs);
+  transition: var(--theme-transition);
+  margin-left: var(--theme-padding-xs);
+  margin-right: var(--theme-padding-xs);
+}
+
+nav a:first-of-type {
+  margin-left: 0;
+}
+
+nav a:hover {
+  background-color: var(--theme-secondary);
+  color: var(--theme-primary-text);
+  transition: var(--theme-transition);
+}
+
+nav a:focus {
+  background-color: var(--theme-light-focus);
+}
+
+main {
+  -webkit-animation: fade-in 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  margin: 0;
+  width: 100%;
+  height: auto;
+  padding-top: 110px;
+  /* display: flex; */
+  min-height: calc(100vh - 144px);
+  /* flex-direction: column; */
+}
+
+.page-title {
+  background-color: var(--theme-background-secondary);
+  color: var(--theme-primary);
+  padding: var(--theme-padding-xl) var(--theme-padding-m);
+  margin-top: var(--theme-padding-l);
+  margin-bottom: var(--theme-padding-xxl);
+  border-top: 1px solid var(--theme-background-secondary);
+  border-bottom: 1px solid var(--theme-background-secondary);
+}
+
+.page-title h2 {
+  font-weight: 300 !important;
+  font-size: 3rem;
+}
+
+.wrapper {
+  max-width: 900px;
+  /* width: 100%; */
+  margin: 0 auto;
+}
+
+#hero-header {
+  padding-top: 110px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.hero-header-content-container {
+  max-width: 50%;
+}
+
+.hero-header-cta-text {
+  font-size: 1.8rem;
+  color: white;
+  font-weight: 500;
+  margin: 0;
+  text-shadow: 0px 1px 2px rgb(0 0 0 / 60%);
+}
+
+.cta-button {
+  font-size: 1.5rem;
+  color: var(--theme-primary-text);
+  text-decoration: none;
+  padding: var(--theme-padding-s) var(--theme-padding-m);
+  border-radius: var(--theme-padding-s);
+  background-color: var(--theme-secondary);
+  box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+footer {
+  background-color: var(--theme-dark);
+  color: var(--theme-primary-text);
+  padding: var(--theme-padding-m);
+  min-height: 102px;
+  text-align: center;
+}
+
+.img-svg {
+  max-width: 300px;
+}
+
+.box {
+  padding: var(--theme-padding-m);
+}
+
+.icon-button {
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+  color:white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex:0 0 48px;
+}
+
+.primary-bg {
+  background-color: var(--theme-primary);
+}
+
+.white-box {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: var(--theme-padding-m);
+  padding: var(--theme-padding-m);
+  margin: var(--theme-padding-xs);
+}
+
+.img-avatar {
+  margin: 0 auto;
+  padding: var(--theme-padding-m);
+  max-width: 150px;
+}
+
+.txt-avatar {
+  text-align: center;
+}
+
+.margin-box {
+  margin: var(--theme-padding-m);
+}
+
+.flex-margin-fix {
+  margin: calc(var(--theme-padding-m) - var(--theme-padding-xl));
+}
+
+.flex-box {
+  flex: 1 1 25ch;
+}
+
+.flex-box-s {
+  flex:1 1 20ch;
+}
+
+
+.util-center {
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+.util-spacer-x {
+  margin-left: var(--theme-padding-xs);
+  margin-right: var(--theme-padding-xs);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-justify-content-center {
+  justify-content: center;
+}
+
+.flex-align-items-start {
+  align-items: flex-start;
+}
+
+.flex-align-items-center {
+  align-items: center;
+}
+
+.flex-justify-items-center {
+  justify-items: center;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.landing-page-article {
+  max-width: 900px;
+  margin: var(--theme-padding-xl) auto;
+  margin-top: var(--theme-padding-xxxl);
+  margin-bottom: var(--theme-padding-xxxl);
+  min-height: 400px;
+}
+
+.landing-page-article:first-of-type {
+  margin-top: var(--theme-padding-xxl);
+}
+
+.video-container iframe {
+  border-radius: var(--theme-padding-m);
 }
 
 .fade-in {
-	-webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 /* ----------------------------------------------
- * Generated by Animista on 2021-2-13 15:24:41
- * Licensed under FreeBSD License.
- * See http://animista.net/license for more info. 
- * w: http://animista.net, t: @cssanimista
- * ---------------------------------------------- */
+* Generated by Animista on 2021-2-13 15:24:41
+* Licensed under FreeBSD License.
+* See http://animista.net/license for more info. 
+* w: http://animista.net, t: @cssanimista
+* ---------------------------------------------- */
 
 /**
- * ----------------------------------------
- * animation fade-in
- * ----------------------------------------
- */
- @-webkit-keyframes fade-in {
-    0% {
+* ----------------------------------------
+* animation fade-in
+* ----------------------------------------
+*/
+@-webkit-keyframes fade-in {
+  0% {
       opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
   }
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
+
+  100% {
       opacity: 1;
-    }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  header img {
+      width: 60px;
   }
   
+  header h1 {
+      margin: 0;
+      font-weight: normal;
+      font-size: 1.0rem;
+  }
+  .hero-header-content-container {
+      max-width: 100%;
+  }
+
+}
