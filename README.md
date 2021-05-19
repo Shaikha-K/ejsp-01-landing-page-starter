@@ -1,8 +1,4 @@
-# DFLP Virtual Lab Activity - Week 1 - Fundamentals of Building a Website
 
-This repository is meant to be used with DFLP's Virtual Lab Activity of week 1. Get started by **cloning** the repository to your machine and follow the steps below:
-
-***
 ## Steps
 #### Install npm packages
 ```
